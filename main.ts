@@ -63,7 +63,7 @@ export default class AutoNoteMover extends Plugin {
 						}
 					} else if (this.settings.use_regex_to_check_for_tags) {
 						const regex = new RegExp(settingTag);
-						if (cacheTag.find((e) => regex.test(e))) {
+						if (regex.test(cacheTag.join())) {
 							fileMove(this.app, settingFolder, fileFullName, file);
 							break;
 						}
